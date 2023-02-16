@@ -36,7 +36,6 @@ export class MailService {
         // });
 
         // console.log("Message sent: %s", info.messageId);
-
         // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
         const receiver = 'Strong Leader Boisss';
@@ -50,7 +49,7 @@ export class MailService {
                 var mailOptions = {
                     // from: '"Meet Savaj" <nicholas.olson@ethereal.email>',
                     from: "savajmeet@gmail.com",
-                    to: "savajmeet10@gmail.com",
+                    to: "savajmeet10@gmail.com, sshivam478@gmail.com",
                     subject: "Bday",
                     html: data
                 };
