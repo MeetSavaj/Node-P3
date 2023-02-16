@@ -1,5 +1,7 @@
-var pdf = require('html-pdf');
+const pdf = require('html-pdf');
+import { response } from 'express';
 import fs from 'fs'
+import path from 'path';
 
 export class PdfService {
 
@@ -9,13 +11,14 @@ export class PdfService {
 
         let html = fs.readFileSync('D:/Vrutti Tech/Practice Projects/Node-P3/src/files/index.html', 'utf8');
 
-        pdf.create(html, options).toStream(function(err: any, stream: any){;
-            stream.pipe(res)
-          });
+        pdf.create(html, options).toStream(function (err: any, stream: any) {
 
-        //   pdf.create(html, options).toFile('x.pdf', function(err:any, res:any){
-        //     console.log(res.filename);
-        //   });
+            stream.pipe(res);
+
+            // res.setHeader('Content-Type', 'application/pdf');
+            // res.setHeader('Content-Disposition', 'attachment; filename=example.pdf');
+
+        });
 
         res.status(200);
     }
