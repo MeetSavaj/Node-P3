@@ -28,7 +28,7 @@ class AppServer {
       next();
     });
 
-    this.app.use('/public/', express.static(path.join(__dirname + './../public/')));
+    this.app.use( express.static( "src" ) );
 
     const routes = new Routes();
     this.app.use("/admin", routes.path());

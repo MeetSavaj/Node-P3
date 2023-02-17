@@ -1,7 +1,5 @@
 const pdf = require('html-pdf');
-import { response } from 'express';
 import fs from 'fs'
-import path from 'path';
 
 export class PdfService {
 

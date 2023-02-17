@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { MailService } from "../../services/email.service";
 import { PdfService } from "../../services/pdf.service";
+import { RenderData } from "../../services/renderdata.service";
 // import { Auth } from "../../middleware/auth.middleware";
 // import { bodyvalidator } from "../../middleware/validate.middleware";
 // import { schemaBio } from "../../schemas/bio.schema";
@@ -14,6 +15,7 @@ export class ModuleRoutes {
     private modulectrl: ModuleContoller = new ModuleContoller();
     private pdfCtrl: PdfService = new PdfService();
     private mailCtrl: MailService = new MailService();
+    private dataCtrl: RenderData = new RenderData();
 
 
     constructor() {
@@ -25,6 +27,8 @@ export class ModuleRoutes {
         this.router.get('/pdf', this.pdfCtrl.getPdf);
 
         this.router.get('/email', this.mailCtrl.sendMail);
+
+        this.router.get('/renderData', this.dataCtrl.renderData);
 
         this.router.post('/',/* [Auth, bodyvalidator(schemaBio)],*/ this.modulectrl.createModule);
 

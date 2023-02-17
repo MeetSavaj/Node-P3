@@ -1,7 +1,6 @@
-"use strict";
-
 const nodemailer = require("nodemailer");
 const ejs = require('ejs');
+const pdf = require('html-pdf');
 
 
 export class MailService {
